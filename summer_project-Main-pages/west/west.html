@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 카카오맵 API 로드 -->
+    <script type="text/javascript"
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6e58214e839d111269a600ebf51beb2a&libraries=services"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 서구먹거리 & 즐길거리</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+<body id="main">
+    <div class="container">
+        <div class="left-section">
+			
+			
+			<div>
+				<h2 style='float:right; margin:0px 0px 19.19px' onclick='back();'>
+					이전
+				</h2>
+			</div>
+			
+			<div >
+			<h2 id="top_title">서구 먹거리 & 즐길거리
+				</h2>
+			</div>
+			
+			
+            <ul id="cg">
+                <li class="category" id="cg1" onclick="showPlace('먹거리')">먹거리</li>
+                <li class="category" id="cg1" onclick="showPlace('즐길거리')">즐길거리</li>
+            </ul>
+
+            <div class="content-space">
+                <h2>목록</h2>
+                <ul id="foodList" class="cg2"></ul>
+                <ul id="activityList" class="cg2"></ul>
+            </div>
+
+        </div>
+        <div class="right-section" id="map"></div>
+    </div>
+    <div class="conmtainer text-center">
+        <div id="modal" class="modal-overlay" style="z-index: 1;">
+            <div class="modal-window">
+
+                <div class="title" id ="top1">
+                    <h2 id="topic"></h2>
+					<div class="close-area" id="close" onclick='modaldown();'>X</div>
+                </div>
+
+               
+
+                <div class="row">
+                    
+                    <div class="col" id="div_img">
+
+                        <div class="col1" id="up">
+                            <img src="" id="img" class="relative" style="width:90%; height:auto; margin-left:25%; margin-bottom:8%;">
+                        </div>
+
+                        <div id="changing">
+                            <img src="img/basic/left_arrow.png" id="i1" onclick='left_changeimg()' class="relative"
+                                style="width: 10%; height:auto; float:left;">
+                            <h5 id="point_number" id="i2" style="float:left;"></h5>
+                            <img src="img/basic/right_arrow.png" id="i3" onclick='right_changeimg()' class="relative"
+                                style="width: 10%; height:auto; float:left;">
+                        </div>
+
+                    </div>
+
+                    <div class="col" id="line">
+
+                        <div class="col1" id="line1">
+                            <h3 id='address'>
+								
+                            </h3>
+                        </div>
+
+                        <div class="col2" id="line2">
+                            <h3 id='station'>
+                               
+                            </h3>
+                        </div>
+
+                        <div class="col3" id="line3">
+                            <h3 id='time'>
+                                
+                            </h3>
+                        </div>
+
+                        <div class="col4" id="line4">
+                            <h3 id='parking'>
+                              
+                            </h3>
+                        </div>
+
+                        <div class="col5" id="line5">
+                            <h3 id='detail'>
+                               
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/list.js"></script> <!-- 목록 리스트 출력 스크립트 -->
+    <script src="js/script.js"></script> <!-- 카카오맵 api 스크립트 -->
+    <script src="js/changeMarker.js"></script>
+</body>
+
+</html>
